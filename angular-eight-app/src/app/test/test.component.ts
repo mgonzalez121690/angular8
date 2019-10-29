@@ -6,22 +6,54 @@ import { Component, OnInit } from '@angular/core';
             {{name}}
           </h2>
 
-          <h2>{{2+2}}</h2>
-          <h2>{{"Welcome: "  + name}}</h2>
-          <h2>{{"Welcome: "  + name.length +" size"}}</h2>
-          <h2>{{"Uppercase: " + name.toUpperCase()}}</h2>
-          <h2>{{greetUser()}}</h2>
-          <h2>{{siteUrl}}</h2>
-
-  `,
-  styles: [` div{
-            color:red;
-  }`]
+          <h2 [class.text-danger]="hasError">Binding class by class.className example: [class.text-danger]</h2>
+          <h2 [ngClass]="messageClasses">Binding class using a object and ngClass: [ngClass]="objectName"</h2>
+          <h2 [style.color]="'orange'">Style binding by style.color: [style.color]="colorName"</h2>
+          <h2 [style.color]="hasError ? 'red' : 'green'">Style binding with conditions</h2>
+          <h2 [style.color]="highlightColor">Style binding by property</h2>
+          <h2 [ngStyle]="titleStyles">Style binding by ngStyle directive</h2>
+          
+          <button (click)="clickButtonEvent($event)">event binding</button>
+          {{bindingEventProperty}}
+          
+          <button (click)="bindingEventProperty='asingment on property binding'">event binding</button>
+          <input #myInput type="text">  
+          <button (click)="logMessage(myInput.value)">log message</button>
+          {{variableReference}}
+          `,
+  styles: [` .text-success{
+                color: green;
+              } 
+              .text-danger {
+                color:red;
+              } 
+              .text-special {
+                font-style: italic;
+              }
+  
+  `]
 })
 export class TestComponent implements OnInit {
   public name = 'Maveware';
   public siteUrl = window.location.href;
-  
+  public hasError = false;
+  public isSpecial = true;
+  public highlightColor = "orange";
+  public bindingEventProperty = "";
+  public messageClasses = {
+    "text-success": !this.hasError,
+    "text-danger": this.hasError,
+    "text-special": this.isSpecial
+  } 
+
+  public titleStyles = {
+    color: "blue",
+    fontStyle: "italic"
+  }
+
+  public variableReference;
+
+
   constructor() { }
 
   ngOnInit() {
@@ -30,6 +62,16 @@ export class TestComponent implements OnInit {
 
   greetUser(){
     return "Hello" + this.name;
+  }
+
+  clickButtonEvent(event){
+    console.log(event);
+    this.bindingEventProperty  = event.type;
+  }
+
+  logMessage(value){
+    console.log(value);
+    this.variableReference = value;
   }
 
 }
