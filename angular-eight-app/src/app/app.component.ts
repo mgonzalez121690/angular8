@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-eight-app for testing';
+  public name = "Angular Parent";
+  public message;
 }
