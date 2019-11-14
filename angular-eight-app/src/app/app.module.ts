@@ -8,6 +8,11 @@ import { AppComponent } from './app.component';
 import { TestComponent } from './test/test.component';
 import { StructureDirectivesComponent } from './structure-directives/structure-directives.component';
 import { InteractiveComponentComponent } from './interactive-component/interactive-component.component';
+import { ServicesComponent } from './services/services.component';
+import { ServiceDetailsComponent } from './service-details/service-details.component';
+import { EmployeeService } from './employee.service';
+import { HttpClientModule} from '@angular/common/http';
+
 
   
 
@@ -16,15 +21,19 @@ import { InteractiveComponentComponent } from './interactive-component/interacti
     AppComponent,
     TestComponent,
     StructureDirectivesComponent,
-    InteractiveComponentComponent
+    InteractiveComponentComponent,
+    ServicesComponent,
+    ServiceDetailsComponent
+
   ],
   imports: [
     BrowserModule,
     FormsModule,
     CommonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [EmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
