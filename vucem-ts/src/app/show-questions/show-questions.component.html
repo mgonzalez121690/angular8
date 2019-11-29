@@ -26,7 +26,8 @@
                             </button>
                         </div>
                         <div class="col-sm-10">
-                            <a [routerLink]="'/questions'" class="btn btn-lg btn-link">{{q.question.title}}</a>
+                                
+                            <a [routerLink]="['/questions',q.question.idQuestion]" class="btn btn-lg btn-link">{{q.question.title}}</a>
                             <div >
                                 <p>{{ q.question.description }}</p>
                             </div>

@@ -25,11 +25,17 @@ export class QuestionService {
     if( keyword === null || keyword === undefined ){
       _url = UrlServiceContants.URL_PULL_QUESTION_SERVICE;
     }else{
-      _url = UrlServiceContants.URL_PULL_QUESTION_SERVICE+'/'+ keyword;
+      _url = UrlServiceContants.URL_GET_KEY_WORD_QUESTION_SERVICE+'/'+ keyword;
     }
 
     return this._http.get<Search[]>(_url)
     .pipe(catchError(this.errorHandler));    
+  }
+
+  getById(idQuestion): Observable<Search>{
+    let _url = UrlServiceContants.URL_GET_ONE_QUESTION_SERVICE+'/'+idQuestion;
+    return this._http.get<Search>(_url)
+      .pipe(catchError(this.errorHandler));
   }
 
   errorHandler( error: HttpErrorResponse ){

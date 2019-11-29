@@ -13,8 +13,9 @@ const routes: Routes = [
   {path:'search/:keyword', component: ShowQuestionsComponent}, 
 
   {path:'questions', component: ShowQuestionsComponent},
-  {path:'questions/ask', component: AddQuestionComponent}
-  
+  {path:'questions/:id', component: ShowResponsesComponent},
+  {path:'questions/ask', component: AddQuestionComponent},
+
 ];
 
 @NgModule({
