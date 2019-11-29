@@ -1,0 +1,10 @@
+hr.divider-question {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 2px solid rgba(8, 8, 8, 0.1);
+}
+
+.form-question-border {
+    border-left: 1ex;
+}

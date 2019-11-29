@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row" style="margin-top: 15px;">
+        <h2>{{title}}</h2>
+    </div>
+   
+    <div class="row"> 
+                <form #askquestionform="ngForm" (ngSubmit)="onSubmit()">
+                    <div class="col-sm-12">
+                        <div *ngIf="errorMsg != undefined" class="alert alert-danger">
+                                {{errorMsg}}   
+                        </div>
+
+                        <div class="form-group">
+                            <label for="questionTitle">Titulo</label>
+                            <input type="text" required maxlength="120" #questionTitle="ngModel" id="questionTitle" class="form-control" 
+                                    [class.is-invalid]="questionTitle.invalid && questionTitle.touched"
+                                    [(ngModel)]="question.title" name="questionTitle" placeholder="¿Cuál es tu pregunta? Sé especifico" 
+                                    (blur)="validateText(questionTitle.value)" (change)="validateText(questionTitle.value)">
+                            <small [class.d-none]="questionTitle.valid || questionTitle.untouched" class="text-danger"> Titulo es requerido</small>        
+                        </div>
+
+                        <div class="form-group">
+                                <label for="description">Descripción</label>
+                                <textarea class="form-control" name="description" [(ngModel)]="question.description" id="description" rows="4"
+                                    cols="50"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="tags">Etiquetas</label>
+                            <input type="text" required #tags="ngModel" id="tags" class="form-control" 
+                            [(ngModel)]="question.tags" name="tags" placeholder="p. ej. ( java sql spring)">
+                        </div>
+
+                        <div class="float-right">
+                            <button [disabled]="askquestionform.form.invalid || formHasError " class="btn btn-primary" type="submit">Publicar</button>
+                        </div>
+                    </div>
+                    
+                </form>
+    </div>
+</div>
