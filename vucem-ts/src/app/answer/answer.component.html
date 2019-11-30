@@ -1,0 +1,19 @@
+<form #formasnwer (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="cause">Causa</label>
+        <textarea id="cause" name="cause" [(ngModel)]="answer.cause"  class="form-control" rows="2" cols="50"></textarea>
+    </div>
+
+
+    <div class="form-group">
+        <label for="solution">Solución</label>
+        <textarea id="solution" name="solution" [(ngModel)]="answer.solution" class="form-control" rows="10" cols="50"></textarea>
+    </div>
+
+    <div class="form-group">
+        <button class="btn btn-primary" type="submit">Publicar tu respuesta</button>
+    </div>
+
+</form>
+
+
