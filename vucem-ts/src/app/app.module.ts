@@ -16,6 +16,7 @@ import { ShowQuestionsComponent } from './show-questions/show-questions.componen
 import { InputSearchComponent } from './input-search/input-search.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { AnswerComponent } from './answer/answer.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { HttpClientModule } from '@angular/common/http';
     SearchItemComponent,
     AddQuestionComponent,
     ShowQuestionsComponent,
-    InputSearchComponent
+    InputSearchComponent,
+    AnswerComponent
     
   ],
   imports: [

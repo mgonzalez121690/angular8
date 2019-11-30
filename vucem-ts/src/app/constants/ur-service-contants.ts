@@ -10,4 +10,5 @@ export class UrlServiceContants {
     public static readonly URL_GET_KEY_WORD_QUESTION_SERVICE = SERVER + '/vucem-ts/questios/getKeyword';
     public static readonly URL_GET_ONE_QUESTION_SERVICE = SERVER + '/vucem-ts/questios/getOne';
 
+    public static readonly URL_GET_ALL_ANSWER_BY_QUESTION_ID = SERVER + '/vucem-ts/answers/getByQuestionId/:id';
 }
