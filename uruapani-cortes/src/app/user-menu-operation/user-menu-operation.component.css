@@ -1,0 +1,17 @@
+.body-user-info{ 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    color: aliceblue;
+    font-size: small;
+}
+
+button.mat-menu-item{
+    background-color: #414347;
+    border-color: #414347;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-size: small;
+}
+
+.icon-display {
+    transform: scale(1);
+ }

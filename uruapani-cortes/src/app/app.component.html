@@ -1,0 +1,31 @@
+<mat-toolbar class="toolbar">
+    <button mat-icon-button>
+            <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+    </button>
+    <span>Uruapani-Cortes</span>    
+    <span style="flex: 1 1 auto"></span>
+    
+    <div *ngIf="currentUser">
+        <app-user-menu-operation [userInfo]="userbyRole" ></app-user-menu-operation>
+        <button mat-icon-button>
+                <mat-icon (click)="sidenav.toggle()">notifications</mat-icon>
+        </button>   
+    </div>
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav>     
+        <mat-nav-list>
+            <mat-list-item> Bandeja </mat-list-item>
+            <mat-list-item> Cortes </mat-list-item>
+            <mat-list-item> Configuración </mat-list-item>            
+    </mat-nav-list>    
+    </mat-sidenav>
+    
+    <mat-sidenav-content class="body">
+            <div class="col-sm-11 offset-sm-1">
+                <router-outlet></router-outlet>
+            </div>
+    </mat-sidenav-content>
+
+</mat-sidenav-container>

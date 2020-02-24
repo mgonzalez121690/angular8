@@ -1,0 +1,242 @@
+<div class="row">
+    
+    <div class="container">
+        
+            <form [formGroup]="accountForm" (ngSubmit)="onSubmit()">
+                <mat-horizontal-stepper> 
+                    <mat-step label='Credenciales'>
+                        <div class="row">
+                           <mat-card>
+                               <mat-card-title>  Credenciales  </mat-card-title>
+                               <mat-card-content>
+                                    <div class="form-group">
+                                        <label for="email" class="login-color-text">Correo</label>
+                                        <input type="text" formControlName="email" class="form-control form-control-sm" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                                        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                            <div *ngIf="f.email.errors.required">Email is required</div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password" class="login-color-text">Password</label>
+                                        <input type="password" formControlName="password" class="form-control form-control-sm" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                                        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                            <div *ngIf="f.password.errors.required">Password is required</div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="confirmPassword" class="login-color-text">Confirmar Password</label>
+                                        <input type="password" formControlName="confirmPassword" class="form-control form-control-sm" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                                        <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
+                                            <div *ngIf="f.confirmPassword.errors.required">Confirmar Password es requerido</div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="nickname" class="login-color-text">Nickname o nombre de la cuenta</label>
+                                        <input type="text" formControlName="nickname" class="form-control form-control-sm" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                                        <div *ngIf="submitted && f.nickname.errors" class="invalid-feedback">
+                                            <div *ngIf="f.nickname.errors.required">Nickname is required</div>
+                                        </div>
+                                    </div>
+                               </mat-card-content>
+                           </mat-card>     
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 d-flex flex-row-reverse">
+                                <button mat-button matStepperNext> Siguiente</button>
+                            </div>
+                        </div>
+                    </mat-step>
+                    <mat-step label='Información de contacto'>
+                           <mat-card>
+                            <mat-card-title>  Información de contacto  </mat-card-title>
+                            <mat-card-content>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="tipoPersona">Persona:</label> 
+                                            <select class="form-control form-control-sm" name="personTypeTemp" required >
+                                                <option *ngFor="let personType of personTypes">{{ personType.viewValue }}</option>
+                                            </select>
+                                        </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="sGiro">Giro principal:</label> 
+                                            <select	class="form-control form-control-sm">
+                                                
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div> 
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label id="lblNombre" class="control-label"
+                                                for="nombre">Nombre</label> <input type="text"
+                                                class="form-control form-control-sm">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label id="lblApellidoPaterno" class="control-label"
+                                                for="apellidoPaterno">Apellido paterno: </label> <input type="text"
+                                                class="form-control form-control-sm">
+                                                
+                                        </div>    
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label id="lblApellidoMaterno" class="control-label"
+                                                for="nombre">Apellido materno: </label> <input type="text"
+                                                class="form-control form-control-sm">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label class="control-label" for="companyName">Nombre
+                                                    de la empresa</label> <input type="text" class="form-control form-control-sm">
+                                        </div>       
+                                    </div>
+                                      
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label class="control-label" for="rfc">RFC
+                                            </label> 
+                                            <input type="text" class="form-control form-control-sm"
+                                                id="rfc" maxlength="15" name="rfc">
+                                        </div>
+                                    </div>
+                                
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label class="control-label" for="phoneNumber">Número
+                                                    de teléfono</label> 
+                                            <input type="number" class="form-control form-control-sm" id="phoneNumber" maxlength="13"
+                                                name="phoneNumber">
+                                        </div>
+                                    </div>
+                                </div>    
+                                    
+                            </mat-card-content>
+                        </mat-card>     
+                        <div class="row">
+                            <div class="col-sm-6 d-flex flex-row">
+                                <button mat-button matStepperPrevious>Anterior </button>
+                            </div>
+                            <div class="col-sm-6 d-flex flex-row-reverse">
+                                <button mat-button matStepperNext> Siguiente</button>
+                            </div>
+                        </div>
+                    </mat-step>
+
+                    <mat-step label='Información de pago'>
+                        <mat-card>
+                            <mat-card-title>Información de pago</mat-card-title>
+                            <mat-card-content>
+                                <div class="col-sm-12">
+                                    <div class="alert alert-info">Introduzca su información de
+                                        pago para que podamos verificar su identidad. No realizaremos
+                                        ningún cargo, a menos que ya haya pasado su mes gratuito o supere los límites de capa
+                                        gratuita de Maveware Web Service. Para obtener más información acerca de
+                                        comparaciones de planes y muestras de precios, haga clic aquí.</div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="numTarjeta">Número de tarjeta crédito o
+                                                débito:</label> <input type="number" id="numTarjeta"
+                                                placeholder="Número de tarjeta" class="form-control form-control-sm"
+                                                maxlength="16" required>
+                                        </div>
+                    
+                                        <div class="form-group">
+                                            <label class="control-label" for="text">
+                                                Nombre del titular de la tarjeta: </label> <input type="text"
+                                                class="form-control form-control-sm" placeholder="Nombre del titular"
+                                                id="titular" name="titular" required>
+                                        </div>
+                    
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label class="control-label" for="text">
+                                                Fecha de vencimiento: </label>
+                                            
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <select id="month" class="form-control form-control-sm">
+                                                            <option *ngFor="let month of cardDateValidity[0].months">{{month}}</option>
+                                                    </select>
+                                                </div>        
+                                                <div class="col-sm-6">
+                                                    <select id="anho" class="form-control form-control-sm">
+                                                        <option *ngFor="let year of cardDateValidity[1].years">{{year}}</option>
+                                                    </select>
+                                                </div>        
+                                            </div>            
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-sm-12">
+                                    <div class="col-sm-6">
+                                        <hr>
+                                        <label>Datos de facturación</label>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-sm-12">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label class="control-label" for="text"> RFC: </label>
+                                            <input type="text" class="form-control form-control-sm">
+                                        </div>
+                                        <fieldset class="form-group">
+                                            <div class="row">
+                                              <legend class="col-form-label col-sm-2 pt-0">Dirección</legend>
+                                              <div class="col-sm-10">
+                                                <div class="form-check">
+                                                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                                                  <label class="form-check-label" for="gridRadios1">
+                                                    Utilizar dirección de contacto
+                                                  </label>
+
+                                                </div>
+                                                <div class="form-check">
+                                                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                                                  <label class="form-check-label" for="gridRadios2">
+                                                    Utilizar nueva dirección
+                                                  </label>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </fieldset>
+                                    </div>
+                                </div>    
+                            </mat-card-content>
+
+                        </mat-card>
+                        <div class="row">
+                            <div class="col-sm-6 d-flex flex-row">
+                                <button mat-button matStepperPrevious>Anterior </button>
+                                
+                            </div>
+                            <div class="col-sm-6 d-flex flex-row-reverse">
+                                <button class="btn" type="submit">
+                                    Finalizar
+                                </button>
+                            </div>
+                        </div>
+                    </mat-step>
+                </mat-horizontal-stepper>        
+            </form>
+        
+    </div>
+</div>

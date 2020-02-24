@@ -1,0 +1,23 @@
+<mat-menu #menuSession="matMenu">
+    <div class="col-sm-12">
+        <div class="form-group body-user-info">
+            <div class="col-sm-12">
+                <label>User: {{userInfo.username}}</label>
+            </div>
+            <div class="col-sm-12">
+                <small>Role: {{userInfo.role}}</small>
+            </div>
+            
+        </div>
+    </div>
+    <hr>
+    <button mat-menu-item (click)="logout()">
+        <mat-icon class="icon-display">lock</mat-icon>
+        Cerrar sessión
+    </button>
+    
+</mat-menu>
+
+<button mat-icon-button [matMenuTriggerFor]="menuSession">
+    <mat-icon>account_circle</mat-icon>
+</button>

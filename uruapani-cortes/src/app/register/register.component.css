@@ -1,0 +1,25 @@
+mat-card-title {
+    color: #616161;
+}
+
+button.mat-button{
+    margin-top: 5px;
+    background-color: #757575;
+    color: white;
+}
+
+button.mat-button:hover{
+    background-color: #06a9f4;
+    color: white;
+}
+
+button{
+    margin-top: 5px;
+    background-color: #757575;
+    color: white;
+}
+
+button:hover{
+    background-color: #06a9f4;
+    color: white;
+}

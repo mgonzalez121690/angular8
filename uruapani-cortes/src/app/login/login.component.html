@@ -1,0 +1,43 @@
+<div class="row">
+    
+    <div class="container">
+        <div *ngIf="error" class="alert alert-danger col-sm-4">{{error}}</div>
+        <div class="col-sm-4">
+            <h2 class="login-color-text">Login</h2>
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="username" class="login-color-text">Username</label>
+                    <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                    <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                        <div *ngIf="f.username.errors.required">Username is required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="login-color-text">Password</label>
+                    <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                        <div *ngIf="f.password.errors.required">Password is required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button [disabled]="loading" class="btn btn-primary form-control">
+                        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                        Login
+                    </button>
+                    
+                </div>               
+
+            </form>
+
+            <a routerLink="/register" class="btn btn-link form-control">¿Olvidaste tu contraseña?</a>
+                
+            <div class="alert alert-info" role="alert">
+                <p> ¿Aún no tienes cuenta? </p> 
+                <button (click)="register()" class="btn btn-warning form-control">
+                        Crear cuenta
+                </button>    
+            </div>
+        </div>
+    </div>
+</div>
+
