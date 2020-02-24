@@ -18,7 +18,7 @@ export class AddQuestionComponent implements OnInit {
   constructor(private router: Router,
               private questionService: QuestionService){
    
-      this.question = new Question(0,'','',['']);
+      this.question = new Question(0,'','',[''],'');
   }
 
   ngOnInit() {
