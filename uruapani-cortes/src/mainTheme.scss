@@ -5,7 +5,7 @@
 $uruapani-primary: mat-palette($mat-light-blue);
 $uruapani-accent: mat-palette($mat-gray, 700, 800, 900);
 
-$uruapani-warn:    mat-palette($mat-yellow);
+$uruapani-warn:    mat-palette($mat-red);
 
 $uruapani-app-theme: mat-light-theme($uruapani-primary, $uruapani-accent, $uruapani-warn);
 

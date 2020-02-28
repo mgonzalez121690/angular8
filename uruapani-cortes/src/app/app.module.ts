@@ -7,7 +7,8 @@ import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, 
-  MatButtonModule, MatAutocompleteModule, MatFormFieldModule, MatMenuModule, MatExpansionModule} from  '@angular/material';
+  MatButtonModule, MatAutocompleteModule, MatFormFieldModule, MatMenuModule,
+   MatExpansionModule, MatInputModule, MatSelectModule} from  '@angular/material';
 
 import { MatStepperModule } from '@angular/material/stepper';
   
@@ -37,8 +38,8 @@ import { UserMenuOperationComponent } from './user-menu-operation/user-menu-oper
     MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, 
     MatButtonModule, MatAutocompleteModule, MatFormFieldModule, 
     MatMenuModule,MatCardModule,MatStepperModule,
-    appRoutingModule, MatExpansionModule,
-    BrowserAnimationsModule,
+    appRoutingModule, MatExpansionModule, MatInputModule, 
+    BrowserAnimationsModule, MatSelectModule,
     ReactiveFormsModule,
     HttpClientModule
   ],
